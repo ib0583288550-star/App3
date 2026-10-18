@@ -38,14 +38,14 @@ class MainActivity : Activity() {
             setBackgroundColor(Color.rgb(15, 20, 35))
         }
         root.addView(TextView(this).apply {
-            text = "מחלץ ומגבה APK"
+            text = "גיבוי־על"
             textSize = 25f
             setTextColor(Color.WHITE)
             typeface = Typeface.DEFAULT_BOLD
             gravity = Gravity.RIGHT
         })
         root.addView(TextView(this).apply {
-            text = "גיבוי מקומי • בלי אינטרנט • yb apps"
+            text = "אפליקציות • נתונים • הגדרות  |  yb apps"
             textSize = 13f
             setTextColor(Color.rgb(135, 180, 255))
             gravity = Gravity.RIGHT
