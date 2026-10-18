@@ -214,9 +214,11 @@ class MainActivity : Activity() {
                 runOnUiThread {
                     if (found) {
                         status.text = "ה-APK חולץ. אשר התקנה במסך הבא. שחזור נתונים פרטיים עדיין דורש שלב Root ייעודי."
+                        val contentUri = androidx.core.content.FileProvider.getUriForFile(this@MainActivity, "$packageName.provider", apkOut)
                         val install = Intent(Intent.ACTION_VIEW).apply {
-                            setDataAndType(Uri.parse("file://" + apkOut.absolutePath), "application/vnd.android.package-archive")
+                            setDataAndType(contentUri, "application/vnd.android.package-archive")
                             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                         }
                         try { startActivity(install) } catch (e: Exception) { status.text = "לא ניתן לפתוח התקנה: ${e.message}" }
                     } else status.text = "הקובץ לא מכיל base.apk"
