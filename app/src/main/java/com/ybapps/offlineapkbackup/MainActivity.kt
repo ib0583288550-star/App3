@@ -54,7 +54,7 @@ class MainActivity : Activity() {
         val search = EditText(this).apply {
             hint = "חיפוש אפליקציה..."
             textSize = 15f
-            singleLine = true
+            setSingleLine(true)
             setTextColor(Color.WHITE)
             setHintTextColor(Color.LTGRAY)
             setBackgroundColor(Color.rgb(31, 40, 60))
